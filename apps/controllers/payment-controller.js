@@ -49,7 +49,7 @@ paymentController.pay = async (req, res) => {
         //invoice creation
         const invoiceResult = await Invoice.create(result)
 
-        res.json({ id: session.id });
+        res.json({ id: session.id ,url:session.url});
     } catch (err) {
         console.log(err);
         res.status(500).json({ error: "Internal Server Error" });
