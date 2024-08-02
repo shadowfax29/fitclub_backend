@@ -1,0 +1,102 @@
+USERS Collection
+userName: String,
+email: String,
+role: String,  // Consider an enum for roles (e.g., ['admin',"member", "owner"])
+mobileNumber: Number,
+password: String,  
+
+OWNERPROFILE Collection
+
+userid: { type: Schema.Types.ObjectId, ref: "User" }, 
+profilephoto: String,  
+gym: { type: Schema.Types.ObjectId, ref: "Gym" },
+
+GYM Collection
+isVerified: Boolean,
+gymname: String,
+address: String,
+images: [String],  
+pincode: Number,  
+mobile:Numbber,
+geo: {
+    lat: '',
+    lng: ''
+}
+members:[]
+gymowner: { type: Schema.Types.ObjectId, ref: "User" },
+subscription: [{duration: String,
+        amount: Number,  
+        benefits: String, 
+        members:[]
+    }] 
+
+MEMBERPROFILE Collection
+
+userid: { type: Schema.Types.ObjectId, ref: "User" },  
+profilephoto: String,  
+height: String,  
+weight: String,  
+gender: String,  
+active: Boolean,  
+gym: { type: Schema.Types.ObjectId, ref: "Gym" },
+
+
+ATTENDANCE Collection
+
+memberId:{ type: Schema.Types.ObjectId, ref: "Member" }
+checkin: Date  // Consider adding check-out time if needed
+
+## Workout  
+    isDefault: Boolean,  default: true 
+    Gym:{
+        type: Schema.Types.ObjectId, 
+        ref: "User"
+    },
+    exerciseName : String,
+    videoLink: String
+
+## Schedule
+    member: ObjectId,
+    gym: ObjectId, 
+    workoutPlans: [
+        { 
+            datetime: Date,
+            title: String,
+            workouts: [
+                {
+                    workout: ObjectId,
+                    reps: Number,
+                    sets: Number,
+                    rest: Number,
+                    note: String 
+                }
+            ]
+        }
+    ]
+
+## Progress
+    client : {
+        type : Schema.Types.ObjectId,
+        ref : "User"
+    },
+    date : Date,
+    weight : Number,
+    chest : Number,
+    waist : Number,
+    hips : Number,
+    thigh : Number,
+    bicep : Number
+
+## Payments
+    member : {
+        type : Schema.Types.ObjectId,
+        ref : "User"
+    },
+    gym : {
+        type : Schema.Types.ObjectId,
+        ref : "User"
+    }
+    subscription : String,
+    startDate : Date,
+    endDate : Date,
+    paymentStatus : String

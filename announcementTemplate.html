@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITCLUB Announcement</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            max-width: 600px;
+            width: 100%;
+            overflow: hidden;
+        }
+        .card header {
+            background-color: black;
+            background-image: url("cid:logo");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .card main {
+            padding: 20px;
+        }
+        .card footer {
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .header-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        .main-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+        .content-paragraph {
+            margin-bottom: 16px;
+        }
+        .list {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-bottom: 16px;
+        }
+        .list-item {
+            margin-bottom: 8px;
+        }
+        .signature {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <header>
+                <h1 class="header-title">FITCLUB Announcement</h1>
+            </header>
+            <main>
+                <h2 class="main-title">Important Announcement</h2>
+                <p class="content-paragraph">Dear FITCLUB members,</p>
+                 <p class="content-paragraph">
+                    {{title}}
+                </p>
+                <p class="content-paragraph">
+                    {{content}}
+                </p>
+                <p class="content-paragraph">Thank you for being a valued member of our community.</p>
+                <p class="signature">The FITCLUB Team</p>
+            </main>
+            <footer>
+                <p>Thank you for being a part of FITCLUB!</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
